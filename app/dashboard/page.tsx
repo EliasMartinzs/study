@@ -1,15 +1,13 @@
 "use client";
-import { useClerk } from "@clerk/clerk-react";
-import { useRouter } from "next/navigation";
-
 import React from "react";
+import { Banner } from "./_components/Banner";
+import { SignOutButton } from "@clerk/clerk-react";
 
 export default function Dashboard() {
-  const { signOut } = useClerk();
-  const router = useRouter();
   return (
-    <div>
-      <button onClick={() => signOut(() => router.push("/"))}>Sign out</button>
-    </div>
+    <main className="space-y-5">
+      <Banner />
+      <SignOutButton />
+    </main>
   );
 }
