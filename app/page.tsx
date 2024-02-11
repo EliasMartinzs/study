@@ -1,11 +1,11 @@
-"use client";
 import React from "react";
-import useStoreUserEffect from "../hooks/useStoreUserEffect";
+import { Header } from "./_components/Header";
+import Loading from "../components/reusable/Loading";
 
 export default function Home() {
-  const userId = useStoreUserEffect();
-  if (userId === null) {
-    return <div>Storing user...</div>;
-  }
-  return <div>Stored user ID: {userId}</div>;
+  return (
+    <main>
+      <Header />
+    </main>
+  );
 }
