@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "../providers/ConvexProvider";
 import { ThemeProvider } from "../providers/ThemeProvider";
+import { Toaster } from "../components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster />
           </ThemeProvider>
         </ConvexClientProvider>
       </body>

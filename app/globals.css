@@ -77,84 +77,131 @@
     margin: 0;
     padding: 0;
   }
+
+  .paddings {
+    @apply px-2 md:px-4 lg:px-8 2xl:px-14;
+  }
 }
 
 @layer components {
-  /* The switch - the box around the slider */
-  .switch {
-    font-size: 17px;
-    position: relative;
-    display: inline-block;
-    width: 3.5em;
-    height: 2em;
-  }
-
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #223243;
-    transition: 0.4s;
-    border-radius: 30px;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 1.4em;
-    width: 1.4em;
-    border-radius: 20px;
-    left: 0.3em;
-    bottom: 0.3em;
-    background-color: #223243;
-    box-shadow: inset 2px -2px 0 1.8px #fff;
-    transition: 0.4s;
-    animation: anima1 0.3s linear;
-  }
-
-  @keyframes anima1 {
+  @keyframes flip {
     0% {
-      transform: translateX(1.5em);
+      transform: rotateX(-90deg);
     }
-
-    80% {
-      transform: translateX(-0.3em);
-    }
-
     100% {
-      transform: translateX(0em);
+      transform: rotateX(0);
     }
   }
 
-  .switch input:checked + .slider:before {
-    background-color: yellow;
-    box-shadow: none;
-    transform: translateX(1.5em);
-    animation: anima 0.3s linear;
+  .flip {
+    animation: flip 0.5s ease-out forwards;
+    transform-origin: top;
   }
 
-  @keyframes anima {
+  .rotate-hor-center {
+    -webkit-animation: rotate-hor-center 0.5s
+      cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+    animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      both;
+  }
+
+  @-webkit-keyframes rotate-hor-center {
     0% {
-      transform: translateX(0px);
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
     }
-
-    80% {
-      transform: translateX(1.6em);
-    }
-
     100% {
-      transform: translateX(1.4em);
+      -webkit-transform: rotateX(-360deg);
+      transform: rotateX(-360deg);
+    }
+  }
+
+  @keyframes rotate-hor-center {
+    0% {
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
+    }
+    100% {
+      -webkit-transform: rotateX(-360deg);
+      transform: rotateX(-360deg);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .slide-down {
+    animation: slideDown 0.5s ease-out forwards;
+  }
+
+  .slide-in-top {
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-50px);
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-50px);
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .slide-in-bottom {
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @-webkit-keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 }
