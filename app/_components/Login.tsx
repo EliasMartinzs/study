@@ -20,7 +20,11 @@ export function Login() {
         </SignedOut>
       </Authenticated>
       <Unauthenticated>
-        <SignInButton mode="modal">Login</SignInButton>
+        <SignInButton mode="modal">
+          <p className="font-black border rounded-md cursor-pointer border-primary p-4 hover:bg-primary text-primary hover:text-background transition-colors">
+            Login
+          </p>
+        </SignInButton>
       </Unauthenticated>
       <AuthLoading>
         <Loading />
