@@ -4,7 +4,6 @@ import { SiAbbrobotstudio } from "react-icons/si";
 import { Button } from "../../../components/ui/button";
 import { useApiFullScreen } from "../../../hooks/useApiFullScreen";
 import { ExitIcon } from "@radix-ui/react-icons";
-import { cn } from "../../../lib/utils";
 import { Pomodoro } from "./Pomodoro";
 
 export function UltraFoco() {
@@ -18,6 +17,7 @@ export function UltraFoco() {
           className="text-3xl lg:text-5xl"
           onClick={goFullScreen}
         >
+          <p className="text-lg font-black">MODO FOCO: Clique aqui</p>
           <SiAbbrobotstudio />
         </Button>
       </div>

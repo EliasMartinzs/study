@@ -63,22 +63,31 @@ function ShowTask({ dayOfWeek }: IWeek) {
   };
 
   return (
-    <div className="p-3 space-y-4 dark:bg-black/20 rounded-bl-md rounded-br-md shadow-inner">
-      {task?.map((t) => (
-        <div key={t._id} className="w-full flex items-center justify-between">
-          <h2 className="flex items-center justify-start gap-x-2 capitalize">
-            <Checkbox
-              checked={t.isCompleted}
-              onCheckedChange={() => updateIsCompleted(!t.isCompleted, t._id)}
+    <div className="px-3 py-5 space-y-4 dark:bg-black/20 rounded-bl-md rounded-br-md shadow-custom-1 rounded-tr-lg max-h-[225px] scrollbar-custom overflow-y-auto">
+      {task?.length === 0 ? (
+        <small>Nenhuma tarefa foi criada até o momento.</small>
+      ) : (
+        task?.map((t) => (
+          <div key={t._id} className="w-full flex items-center justify-between">
+            <small
+              className={cn(
+                "flex items-center justify-start gap-x-2 capitalize",
+                t.isCompleted && "line-through"
+              )}
+            >
+              <Checkbox
+                checked={t.isCompleted}
+                onCheckedChange={() => updateIsCompleted(!t.isCompleted, t._id)}
+              />
+              {t.description} {t.emoji}
+            </small>
+            <Trash
+              className="w-4 h-4 cursor-pointer"
+              onClick={() => onRemove(t?._id)}
             />
-            {t.description} {t.emoji}
-          </h2>
-          <Trash
-            className="w-4 h-4 cursor-pointer"
-            onClick={() => onRemove(t?._id)}
-          />
-        </div>
-      ))}
+          </div>
+        ))
+      )}
     </div>
   );
 }
@@ -151,11 +160,11 @@ export function Week({ dayOfWeek }: IWeek) {
   return (
     <div
       className={cn(
-        "w-full transition-all",
-        isVisible ? "h-auto max-h-[none]" : "h-10 max-h-10"
+        "w-full transition-all"
+        // isVisible ? "h-auto max-h-[none]" : "h-10 max-h-10"
       )}
     >
-      <div className="flex items-center justify-between border rounded-md p-2">
+      <div className="flex items-center justify-between border-b-4 border-primary rounded-br-lg p-2">
         <h5 className="cursor-pointer font-bold">{dayOfWeek}</h5>
 
         <div className="space-x-2">

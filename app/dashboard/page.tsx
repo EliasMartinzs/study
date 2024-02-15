@@ -3,16 +3,14 @@ import { Clock } from "./_components/Clock";
 import { Name } from "./_components/Name";
 import { Weekly } from "./_components/Weekly";
 import { UltraFoco } from "./_components/UltraFoco";
-import { ModeToggle } from "../../components/settings/ModeToggle";
+import { Top } from "../../components/settings/Top";
 
 export default function Dashboard() {
   return (
-    <main className="space-y-6 relative">
+    <main className="space-y-10 relative">
       <Banner />
-      <div className="paddings md:space-y-6">
-        <div className="w-full">
-          <Name />
-        </div>
+      <div className="paddings md:space-y-10">
+        <Name />
         <div className="flex flex-col md:flex-row items-start gap-6">
           <div className="max-md:flex justify-center max-md:w-full">
             <Clock />
@@ -23,7 +21,7 @@ export default function Dashboard() {
         </div>
       </div>
       <UltraFoco />
-      <ModeToggle />
+      <Top />
     </main>
   );
 }

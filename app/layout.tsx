@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "../providers/ConvexProvider";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import { Toaster } from "../components/ui/sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Study",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <ConvexClientProvider>
           <ThemeProvider
             attribute="class"

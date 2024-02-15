@@ -81,6 +81,31 @@
   .paddings {
     @apply px-2 md:px-4 lg:px-8 2xl:px-14;
   }
+
+  .shadow-custom-1 {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: var(--foreground) var(--background);
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 4px; /* Largura da barra de rolagem para WebKit/Blink */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo da trilha para WebKit/Blink */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do manipulador para WebKit/Blink */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do manipulador ao passar o mouse para WebKit/Blink */
+  }
 }
 
 @layer components {

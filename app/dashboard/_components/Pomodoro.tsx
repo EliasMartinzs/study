@@ -4,9 +4,8 @@ import { FaPlay, FaPause } from "react-icons/fa";
 import { RxReset } from "react-icons/rx";
 import { VscSettings } from "react-icons/vsc";
 import { cn } from "../../../lib/utils";
-import { ModeToggle } from "../../../components/settings/ModeToggle";
+
 import { toast } from "sonner";
-import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 

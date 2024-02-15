@@ -46,10 +46,12 @@ export function Name() {
           />
         </form>
       </div>
-      <CiEdit
-        className="text-xl lg:text-3xl opacity-30 hover:opacity-100 transition-colors cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
-      />
+      {user?.fullName && (
+        <CiEdit
+          className="text-xl lg:text-3xl opacity-30 hover:opacity-100 transition-colors cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+      )}
     </div>
   );
 }
