@@ -15,12 +15,11 @@ export default function Dashboard() {
           <div className="max-md:flex justify-center max-md:w-full">
             <Clock />
           </div>
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full overflow-auto">
             <Weekly />
           </div>
         </div>
       </div>
-      <UltraFoco />
       <Top />
     </main>
   );

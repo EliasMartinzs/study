@@ -4,6 +4,7 @@ import { SignOutButton } from "@clerk/clerk-react";
 import { ModeToggle } from "./ModeToggle";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
+import { UltraFoco } from "../../app/dashboard/_components/UltraFoco";
 
 export function Top() {
   const router = useRouter();
@@ -16,6 +17,8 @@ export function Top() {
           <LogOut /> Sair
         </button>
       </SignOutButton>
+
+      <UltraFoco />
     </div>
   );
 }

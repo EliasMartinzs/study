@@ -11,11 +11,9 @@ export function UltraFoco() {
 
   return (
     <div>
-      <div className="fixed bottom-0 right-0 p-3">
-        <span onClick={goFullScreen}>
-          <Circle className="text-3xl lg:text-5xl cursor-pointer" />
-        </span>
-      </div>
+      <span onClick={goFullScreen}>
+        <Circle className="text-3xl lg:text-5xl cursor-pointer" />
+      </span>
 
       {isFullScreen && (
         <div className="transition-all absolute inset-0 z-[999999] bg-background w-full h-screen">
