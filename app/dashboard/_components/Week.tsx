@@ -160,8 +160,8 @@ export function Week({ dayOfWeek }: IWeek) {
   return (
     <div
       className={cn(
-        "w-full transition-all"
-        // isVisible ? "h-auto max-h-[none]" : "h-10 max-h-10"
+        "w-full transition-all",
+        isVisible ? "h-auto max-h-[none]" : "h-10 max-h-10"
       )}
     >
       <div className="flex items-center justify-between border-b-4 border-primary rounded-br-lg p-2">

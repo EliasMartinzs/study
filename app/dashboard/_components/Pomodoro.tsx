@@ -28,41 +28,39 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   const dashOffset = dashArray - (dashArray * progress) / 100;
 
   return (
-    <div className="relative">
-      <svg width={size} height={size} viewBox={viewBox}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          strokeWidth={`${strokeWidth}px`}
-          fill="transparent"
-          stroke="#4d4d4d"
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          strokeWidth={`${strokeWidth}px`}
-          fill="transparent"
-          className="stroke-primary"
-          strokeLinecap="round"
-          strokeDasharray={dashArray}
-          strokeDashoffset={dashOffset}
-          transform={`rotate(-90 ${size / 2} ${size / 2})`}
-        />
-        <text
-          x="50%"
-          y="50%"
-          fontFamily="Arial"
-          textAnchor="middle"
-          alignmentBaseline="middle"
-          transform={`translate(0, ${strokeWidth / 2})`}
-          className="fill-primary font-black text-5xl lg:text-6xl"
-        >
-          {children}
-        </text>
-      </svg>
-    </div>
+    <svg width={size} height={size} viewBox={viewBox}>
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        strokeWidth={`${strokeWidth}px`}
+        fill="transparent"
+        stroke="#4d4d4d"
+      />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        strokeWidth={`${strokeWidth}px`}
+        fill="transparent"
+        className="stroke-primary"
+        strokeLinecap="round"
+        strokeDasharray={dashArray}
+        strokeDashoffset={dashOffset}
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+      />
+      <text
+        x="50%"
+        y="50%"
+        fontFamily="Arial"
+        textAnchor="middle"
+        alignmentBaseline="middle"
+        transform={`translate(0, ${strokeWidth / 2})`}
+        className="fill-primary font-black text-5xl lg:text-6xl"
+      >
+        {children}
+      </text>
+    </svg>
   );
 };
 

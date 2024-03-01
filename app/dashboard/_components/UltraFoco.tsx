@@ -1,10 +1,10 @@
 "use client";
 
-import { SiAbbrobotstudio } from "react-icons/si";
 import { Button } from "../../../components/ui/button";
 import { useApiFullScreen } from "../../../hooks/useApiFullScreen";
 import { ExitIcon } from "@radix-ui/react-icons";
 import { Pomodoro } from "./Pomodoro";
+import { Circle } from "lucide-react";
 
 export function UltraFoco() {
   const { exitFullScreen, goFullScreen, isFullScreen } = useApiFullScreen();
@@ -12,14 +12,9 @@ export function UltraFoco() {
   return (
     <div>
       <div className="fixed bottom-0 right-0 p-3">
-        <Button
-          variant="clean"
-          className="text-3xl lg:text-5xl"
-          onClick={goFullScreen}
-        >
-          <p className="text-lg font-black">MODO FOCO: Clique aqui</p>
-          <SiAbbrobotstudio />
-        </Button>
+        <span onClick={goFullScreen}>
+          <Circle className="text-3xl lg:text-5xl cursor-pointer" />
+        </span>
       </div>
 
       {isFullScreen && (
